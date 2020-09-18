@@ -39,13 +39,6 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'quayServiceConnection'
-    command: 'start'
-    arguments: '-it --entrypoint ./build-app.sh'
-    container: 'quay.io/p1987br/orion:latest'
-
-- task: Docker@2
-  inputs:
-    containerRegistry: 'quayServiceConnection'
     repository: 'p1987br/orion'
     command: 'push'
     tags: latest
